@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     assemble: {
 
       //『 lesosn1 : YAMLとhandlebarsを用いてテンプレートを1つコンパイルしてみよう』
-      lsn1: {
+      lsn1 :{
         options: {
           data: ['config.yml']
         },
@@ -27,14 +27,13 @@ module.exports = function(grunt) {
         options: {
           data: ['config.yml'],
           // ↓ partialsオプションを付け加え、headerとfooterを読み込む
-          partials: 'src/lsn2-4/partials/*.hbs',
-          flatten: true
+          partials: 'src/lsn2-4/partials/*.hbs'
         },
         files: [
           {
             // ↓ headerとfooterを取込む元のファイル
-            src: 'src/lsn2-4/*.hbs',
-            dest: 'dest2/'
+            src: 'src/lsn2-4/1.hbs',
+            dest: 'dest2/1.html'
           }
         ]
       },
@@ -43,42 +42,26 @@ module.exports = function(grunt) {
       lsn3: {
         options: {
           data: ['config.yml'],
-          partials: 'src/lsn2-4/partials/*.hbs',
-          flatten: true
+          partials: 'src/lsn2-4/partials/*.hbs'
         },
         files: [
           {
-            src: 'src/lsn2-4/*.hbs',
-            dest: 'dest3/'
+            src: 'src/lsn2-4/1.hbs',
+            dest: 'dest3/1.html'
           }
         ]
       },
 
       //『 lesosn4 : helperのisを使ってみよう』
-      lsn4_true: {
+      lsn4: {
         options: {
           data: ['config.yml'],
-          partials: 'src/lsn2-4/partials/*.hbs',
-          flatten: true
+          partials: 'src/lsn2-4/partials/*.hbs'
         },
         files: [
           {
-            src: 'src/lsn2-4/*.hbs',
-            dest: 'dest4_true/'
-          }
-        ]
-      },
-
-      lsn4_false: {
-        options: {
-          data: ['config.yml'],
-          partials: 'src/lsn2-4/partials/*.hbs',
-          flatten: true
-        },
-        files: [
-          {
-            src: 'src/lsn2-4/*.hbs',
-            dest: 'dest4_false/'
+            src: 'src/lsn2-4/1.hbs',
+            dest: 'dest4/1.html'
           }
         ]
       },
@@ -87,9 +70,9 @@ module.exports = function(grunt) {
       lsn5: {
         options: {
           data: ['config.yml'],
+          partials: 'src/lsn5/partials/*.hbs',
           // 新しくオプションにlayoutを追加
           layout: 'src/lsn5/default.hbs',
-          partials: 'src/lsn5/partials/*.hbs',
           flatten: true
         },
         files: [
@@ -98,7 +81,7 @@ module.exports = function(grunt) {
             dest: 'dest5/'
           }
         ]
-      },
+      }
 
     } // assemble
 
@@ -111,8 +94,7 @@ module.exports = function(grunt) {
   grunt.registerTask('lsn1', ['assemble:lsn1']);
   grunt.registerTask('lsn2', ['assemble:lsn2']);
   grunt.registerTask('lsn3', ['assemble:lsn3']);
-  grunt.registerTask('lsn4_true', ['assemble:lsn4_true']);
-  grunt.registerTask('lsn4_false', ['assemble:lsn4_false']);
+  grunt.registerTask('lsn4', ['assemble:lsn4']);
   grunt.registerTask('lsn5', ['assemble:lsn5']);
 
 };
