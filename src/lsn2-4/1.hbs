@@ -1,0 +1,26 @@
+---
+pageTitle: タイトルだよ
+pageDiscription: ページの説明だよ
+game: Miitomo
+---
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>{{pageTitle}} - {{config.siteName}}</title>
+</head>
+<body>
+  {{> header}}
+  <p>
+    {{pageDiscription}}
+  </p>
+
+  {{#is game 'FFRK'}}
+    <p>FFRK面白いよ</p>
+  {{else}}
+    <p>Miitomo面白いよ</p>
+  {{/is}}
+
+  {{> footer}}
+</body>
+</html>
